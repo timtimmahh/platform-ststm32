@@ -42,8 +42,8 @@
       "title": "Standard Peripheral Library"
     },
     "spl-gd32": {
-     "package": "framework-spl",
-      "script": "builder/frameworks/spl.py",
+     "package": "framework-spl-gd32",
+      "script": "builder/frameworks/spl-gd32.py",
       "description": "The ST Standard Peripheral Library provides a set of functions for handling the peripherals on the STM32 family of microcontrollers.",
       "homepage": "https://www.st.com/en/embedded-software/stsw-stm8069.html",
       "title": "Standard Peripheral Library"
@@ -179,7 +179,7 @@
       "owner": "platformio",
       "version": "~2.10201.0"
     },
-    "framework-spl": {
+    "framework-spl-gd32": {
       "type": "framework",
       "optional": true,
       "owner": "timtimmahh",
