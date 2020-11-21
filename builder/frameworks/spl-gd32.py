@@ -34,7 +34,7 @@ board = env.BoardConfig()
 
 env.SConscript("_bare.py")
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-spl")
+FRAMEWORK_DIR = platform.get_package_dir("framework-spl-gd32")
 assert isdir(FRAMEWORK_DIR)
 
 
@@ -81,6 +81,10 @@ env.Append(
         join(FRAMEWORK_DIR, board.get("build.core"), "spl",
              "variants", board.get("build.mcu")[0:7], "inc"),
         join(FRAMEWORK_DIR, board.get("build.core"), "spl",
+             "variants", board.get("build.mcu")[0:7], "src"),
+        join(FRAMEWORK_DIR, board.get("build.core"), "gd32",
+             "variants", board.get("build.mcu")[0:7], "inc"),
+        join(FRAMEWORK_DIR, board.get("build.core"), "gd32",
              "variants", board.get("build.mcu")[0:7], "src")
     ]
 )
@@ -124,6 +128,14 @@ libs.append(env.BuildLibrary(
     join("$BUILD_DIR", "FrameworkSPL"),
     join(FRAMEWORK_DIR, board.get("build.core"),
          "spl", "variants",
+         board.get("build.mcu")[0:7], "src"),
+    src_filter=" ".join(src_filter_patterns)
+))
+
+libs.append(env.BuildLibrary(
+    join("$BUILD_DIR", "FrameworkGD32"),
+    join(FRAMEWORK_DIR, board.get("build.core"),
+         "gd32", "variants",
          board.get("build.mcu")[0:7], "src"),
     src_filter=" ".join(src_filter_patterns)
 ))
