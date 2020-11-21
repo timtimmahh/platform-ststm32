@@ -182,7 +182,6 @@
     "framework-spl-gd32": {
       "type": "framework",
       "optional": true,
-      "owner": "timtimmahh",
       "version": "~2.10201.0"
     },
     "framework-libopencm3": {
