@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/platformio/platform-ststm32.git"
+    "url": "https://github.com/timtimmahh/platform-ststm32.git"
   },
   "version": "9.0.0",
   "frameworks": {
@@ -36,6 +36,13 @@
     },
     "spl": {
       "package": "framework-spl",
+      "script": "builder/frameworks/spl.py",
+      "description": "The ST Standard Peripheral Library provides a set of functions for handling the peripherals on the STM32 family of microcontrollers.",
+      "homepage": "https://www.st.com/en/embedded-software/stsw-stm8069.html",
+      "title": "Standard Peripheral Library"
+    },
+    "spl-gd32": {
+     "package": "framework-spl",
       "script": "builder/frameworks/spl.py",
       "description": "The ST Standard Peripheral Library provides a set of functions for handling the peripherals on the STM32 family of microcontrollers.",
       "homepage": "https://www.st.com/en/embedded-software/stsw-stm8069.html",
@@ -170,6 +177,12 @@
       "type": "framework",
       "optional": true,
       "owner": "platformio",
+      "version": "~2.10201.0"
+    },
+    "framework-spl": {
+      "type": "framework",
+      "optional": true,
+      "owner": "timtimmahh",
       "version": "~2.10201.0"
     },
     "framework-libopencm3": {
